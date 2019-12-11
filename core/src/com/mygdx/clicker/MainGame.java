@@ -101,6 +101,17 @@ public class MainGame extends ApplicationAdapter {
 			Gdx.gl.glClearColor(1, 0.55f, 0.2f, 1);
 			Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 			batch.begin();
+
+			//main garbage plate section
+			parameter.size = 75;
+			text = generator.generateFont(parameter);
+			text.draw(batch, "Garbage Plates", 235, 180);
+			text.draw(batch, Integer.toString(garbagePlates), 235, 100);
+
+			//shop text
+			parameter.size = 125;
+			text = generator.generateFont(parameter);
+			text.draw(batch, "shop", 1000, 400);
 			if(Gdx.input.isTouched()) {
 				int x = Gdx.input.getX();
 				int y = Gdx.input.getY();
@@ -117,10 +128,6 @@ public class MainGame extends ApplicationAdapter {
 			else{
 				batch.draw(plate, 150, 200, 850, 850);
 			}
-			parameter.size = 75;
-			text = generator.generateFont(parameter);
-			text.draw(batch, "Garbage Plates", 235, 180);
-			text.draw(batch, Integer.toString(garbagePlates), 235, 100);
 			batch.end();
 		}
 		else if(screens[3]){ //shop
