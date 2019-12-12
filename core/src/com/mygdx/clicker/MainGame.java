@@ -4,6 +4,7 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -16,6 +17,7 @@ public class MainGame extends ApplicationAdapter {
 	private FreeTypeFontGenerator generator;
 	private FreeTypeFontGenerator.FreeTypeFontParameter parameter;
 
+	private OrthographicCamera camera;
 	private boolean[] screens;
 	private float[] colorSettings;
 	private int garbagePlates, clickAmount, earnRate60, earnRate30, earnRate10, earnRate5, earnRate1;
@@ -23,6 +25,9 @@ public class MainGame extends ApplicationAdapter {
 	int w, h;
 	@Override
 	public void create () {
+		camera = new OrthographicCamera(2160, 1080);
+		camera.translate(1000, 520);
+		camera.update();
 		garbagePlates = 0;
 		clickAmount = 1;
 		earnRate60 = 0;
@@ -80,6 +85,8 @@ public class MainGame extends ApplicationAdapter {
 
 	@Override
 	public void render () {
+		batch.setProjectionMatrix(camera.combined);
+
 		if(screens[0]){ //main menu
 			Gdx.gl.glClearColor(colorSettings[0], colorSettings[1], colorSettings[2], 1);
 			Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
