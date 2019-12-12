@@ -1,4 +1,5 @@
 # CS441_Assignment5
+NOTE: I quick fixed a problem where the game would only properly display on the pixel 3's screen dimensions. That's technically one more commit if that salvages any part of my grade at all.
 # Garbage Plate Clicker
 A game modeled after the infamous cookie clicker, known for getting thousands of middle schoolers addicted to staring at their screens and 
 watching numbers go up.
