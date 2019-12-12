@@ -132,7 +132,7 @@ public class MainGame extends ApplicationAdapter {
 			text100.draw(batch, "change your style in ", 420, 400);
 			text150.draw(batch, "settings", 650, 300);
 			text100.draw(batch, "earn enough plates to", 50, 150);
-			text200.draw(batch, "win!", 1300, 165);
+			text200.draw(batch, "win!", 1475, 165);
 			batch.end();
 
 			if(Gdx.input.justTouched()) {
@@ -161,7 +161,7 @@ public class MainGame extends ApplicationAdapter {
 					screens[6] = true;
 				}
 				//win clicked
-				if(x >= 1300 && x <= 1750 && y >= 900 && y <= 1000){
+				if(x >= 1475 && x <= 1930 && y >= 900 && y <= 1000){
 					screens[1] = false;
 					screens[4] = true;
 				}
