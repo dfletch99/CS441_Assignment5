@@ -25,8 +25,8 @@ public class MainGame extends ApplicationAdapter {
 	int w, h;
 	@Override
 	public void create () {
-		camera = new OrthographicCamera(2160, 1080);
-		camera.translate(1000, 520);
+        camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        camera.setToOrtho(false);
 		camera.update();
 		garbagePlates = 0;
 		clickAmount = 1;
@@ -145,7 +145,6 @@ public class MainGame extends ApplicationAdapter {
 			if(Gdx.input.justTouched()) {
 				int x = Gdx.input.getX();
 				int y = Gdx.input.getY();
-				System.out.println(x + " " + y);
 				//menu button clicked
 				if(x >= 1454 && x <= 1990 && y >= 15 && y <= 70){
 					screens[1] = false;
@@ -276,6 +275,7 @@ public class MainGame extends ApplicationAdapter {
 			if(Gdx.input.justTouched()) {
 				int x = Gdx.input.getX();
 				int y = Gdx.input.getY();
+				System.out.println(x + " " + y);
 				//menu button clicked
                 if(x >= 1454 && x <= 1990 && y >= 15 && y <= 70){
 					screens[3] = false;
